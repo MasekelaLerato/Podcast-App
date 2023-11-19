@@ -112,7 +112,7 @@ interface RegisterProps {
         </div>
   
         {newUser && (
-          /* Form Title */
+          /* Form Title and SignUp Form  */
           <div className="form-container">
             <div className="title-container" style={{ textAlign: "center" }}>
              Sign Up
@@ -131,7 +131,8 @@ interface RegisterProps {
                   placeholder="example@gmail.com"
                   required={true}
                 />
-                {/* Username section */}
+                
+                {/* Username input */}
                 <label htmlFor="username">Username</label>
                 <input
                   type="text"
@@ -140,7 +141,8 @@ interface RegisterProps {
                   placeholder="username"
                   required={true}
                 />
-                {/* Password section */}
+                
+                {/* Password input */}
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -149,6 +151,8 @@ interface RegisterProps {
                   placeholder="password"
                   required={true}
                 />
+                
+                {/* Confirm Password input */}
                 <label htmlFor="confirmation">Confirm password</label>
                 <input
                   type="password"
@@ -158,6 +162,7 @@ interface RegisterProps {
                   required={true}
                 />
               </div>
+              
                {/* Submit button */}
               <button className="form-submit-btn" type="submit" form="sign-in">
                 Sign up
@@ -167,7 +172,8 @@ interface RegisterProps {
         )}
   
         {!newUser && (
-          /*login title */
+         
+         /*Login Title and Login Form */
           <div className="form-container">
             <div className="title-container" style={{ textAlign: "center" }}>
               Login
@@ -175,6 +181,7 @@ interface RegisterProps {
   
             <form className="form" id="sign-in" onSubmit={signIn}>
               <div className="form-group">
+               
                 {/* Email section  */}
                 <label htmlFor="email">Email</label>
                 <input
@@ -184,7 +191,8 @@ interface RegisterProps {
                   placeholder="example@gmail.com"
                   required={true}
                 />
-                {/* password section */}
+               
+                {/* password input */}
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -194,6 +202,7 @@ interface RegisterProps {
                   required={true}
                 />
               </div>
+             
               {/* Submit button */}
                <button className="form-submit-btn" type="submit" form="sign-in">
                 Log in
