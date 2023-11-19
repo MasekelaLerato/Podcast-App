@@ -3,8 +3,8 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import "./index.css";
-import Register from "./components/homepage";
-import "../src/components/homepage.css"
+import Register from "./components/register";
+import "../src/components/register.css"
 
 //This is the main app component, it contains the routes for the application and if there is a valid user
 //it will set the user in the session storage and will then be used to check if the user is logged in or not and 
