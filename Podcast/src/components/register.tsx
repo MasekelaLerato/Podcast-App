@@ -7,7 +7,8 @@ interface RegisterProps {
   setUser: any;
 }
 
-const Register: React.FC<RegisterProps> = ({ setUser }) => {
+const Register =(props : RegisterProps)=> {
+  const {setUser} = props;
   const [newUser, setNewUser] = React.useState<boolean>(true);
   const navigate = useNavigate(); // Navigate to the homepage after login
 
