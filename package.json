@@ -2,5 +2,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
     "react-router-dom": "^6.19.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }
