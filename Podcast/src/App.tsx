@@ -2,10 +2,9 @@
 
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Homepage from "./components/homepage";
-import Register from "./components/register";
-import "./components/register.css"
+import "./components/login.css"
 import "./index.css"
+import Login from "./components/login";
 
 const App = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
@@ -27,17 +26,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/homepage" element={<Homepage setUser={setUser} />} />
-        <Route path="/*" element={<Register setUser={setUser} />} />
+      <Route path="/*" element={<Login setUser={setUser} />} />
       </Routes>
     </BrowserRouter>
   );
 };
 
 export default App;
-
-
-
-
-
-
