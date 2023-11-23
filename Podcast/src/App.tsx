@@ -4,7 +4,8 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./components/login.css"
 import "./index.css"
-import Login from "./components/login";
+// import Login from  "./components/login";
+import Homepage from "./components/homepage"
 
 const App = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
@@ -26,7 +27,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/*" element={<Login setUser={setUser} />} />
+      {/* <Route path="/*" element={<Login setUser={setUser} />} /> */}
+      <Route path="/*" element={<Homepage />} />
       </Routes>
     </BrowserRouter>
   );
