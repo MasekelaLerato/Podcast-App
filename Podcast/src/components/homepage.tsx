@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ApiCall from './api-call';
 
@@ -12,8 +13,11 @@ const Homepage = () => {
         <p>Error: {error}</p>
       ) : apiData ? (
         <div>
-          {/* component rendering logic using apiData */}
-          <pre>{JSON.stringify(apiData, null, 2)}</pre>
+          <h1>Podcasts</h1>
+          <div>
+            {/* Render your API data as needed */}
+            <pre>{JSON.stringify(apiData, null, 2)}</pre>
+          </div>
         </div>
       ) : null}
     </div>

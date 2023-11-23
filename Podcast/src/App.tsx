@@ -1,5 +1,3 @@
-// App.tsx
-
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./components/login.css"
@@ -10,6 +8,7 @@ import Homepage from "./components/homepage"
 const App = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   const [user, setUser] = React.useState<any>(null);
+
   
   React.useEffect(() => {
     const userOld = sessionStorage.getItem('user');
@@ -26,11 +25,13 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    
       <Routes>
-      {/* <Route path="/*" element={<Login setUser={setUser} />} /> */}
+      {/* <Route path="/*" element={<Login setUser={setUser} />} />  */}
       <Route path="/*" element={<Homepage />} />
       </Routes>
-    </BrowserRouter>
+      
+     </BrowserRouter>
   );
 };
 
