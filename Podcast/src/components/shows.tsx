@@ -1,5 +1,5 @@
 
-interface ShowItem {
+interface ShowsItem {
     title: string;
     image: string;
     seasons: number;
@@ -9,7 +9,7 @@ interface ShowItem {
   }
   
   interface ShowsProps {
-    item: ShowItem;
+    item: ShowsItem;
     handleClick: (e: React.MouseEvent<HTMLDivElement>) => void;
   }
   
@@ -24,7 +24,7 @@ interface ShowItem {
   }
   
     
-    export const Shows = (props: ShowsProps) => {
+ const Shows = (props: ShowsProps) => {
       const { item, handleClick } = props;
   
 

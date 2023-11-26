@@ -9,6 +9,7 @@ const ApiCall = () => {
   const URL = "https://podcast-api.netlify.app/shows";
 
   useEffect(() => {
+    // Fetch data from the specified URL
     fetch(URL)
       .then(response => {
         if (!response.ok) {
