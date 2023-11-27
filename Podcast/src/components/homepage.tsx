@@ -1,41 +1,32 @@
 
-import React from 'react';
-import ApiCall from './api-call';
-import Shows from "./shows"
-import Carosule from "./carousel"
+ import React from 'react';
+ import ApiCall from './api-call';
+ import Shows from "./shows"
+// import Carosule from "./carousel"
 
-const Homepage = () => {
+ const Homepage = () => {
   const { apiData, isLoading, error } = ApiCall();
 
+  console.log(apiData)
   
-  
 
-
-
-
-
-
-
-
-  
-  
-  return (
-    <div>
-      {isLoading ? (
+ return (
+     <div>
+     {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : apiData ? (
-        <div>
+         <div>
           <h1>Podcasts</h1>
           <div>
-            {/* Render your API data as needed */}
-            <pre>{JSON.stringify(apiData, null, 2)}</pre>
+             {/* Render your API data as needed */}
+           <Shows/>
           </div>
         </div>
       ) : null}
-    </div>
-  );
+</div>
+   );
 };
 
 export default Homepage;

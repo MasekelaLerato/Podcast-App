@@ -1,50 +1,54 @@
+import React, { useEffect, useState } from 'react';
 
-interface ShowsItem {
-    title: string;
-    image: string;
-    seasons: number;
-    description: string;
-    id: string;
-    updated: string;
-  }
-  
-  interface ShowsProps {
-    item: ShowsItem;
-    handleClick: (e: React.MouseEvent<HTMLDivElement>) => void;
-  }
-  
-  
+interface Podcast {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  seasons: number;
+  genres: number[];
+  updated: string;
+}
 
- export const formattedDate =(dateString:string|Date) =>{
-    const date = new Date(dateString);
-    const month = date.toLocaleString('default', { month: 'short' });
-    const year = date.getFullYear();
-  
-    return `${year} ${month}(${date.getDate()})`;
-  }
-  
-    
- const Shows = (props: ShowsProps) => {
-      const { item, handleClick } = props;
-  
+const PodcastList: React.FC = () => {
+  const [podcasts, setPodcasts] = useState<Podcast[]>([]);
+  const URL = 'https://podcast-api.netlify.app/shows';
 
-      return (
-          <>
-          <div className ="show" id={item.id} onClick={handleClick}>
-          <img srcSet={item.image}  className="show-image"/>
-          <div className="show-info">
-            <p className="show-title">{item.title}</p>
-            <div className="show-season">Seasons: {item.seasons}</div>
-            <p className="updated">Updated: {formattedDate(item.updated)}</p>
-            </div> 
-            </div>
-          </>  
-      )
-  }
-  
-  export default Shows
-  
-  
-  
-  
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL);
+
+        if (!response.ok) {
+          throw new Error(`Network response was not ok, status code: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setPodcasts(data);
+      } catch (error) {
+        console.error('Error fetching podcasts:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+   
+      <div>
+        {podcasts.map((podcast) => (
+          <div key={podcast.id}>
+            <img src={podcast.image} alt={podcast.title} style={{ maxWidth: '100px' }} />
+            <h2>{podcast.title}</h2>
+            {/* <p>{podcast.description}</p> */}
+            <p>Seasons: {podcast.seasons}</p>
+            {/* Add more details as needed */}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default PodcastList;

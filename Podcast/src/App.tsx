@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./components/login.css"
 import "./index.css"
-// import Login from  "./components/login";
+//  import Login from  "./components/login";
 import Homepage from "./components/homepage"
 
 const App = () => {
