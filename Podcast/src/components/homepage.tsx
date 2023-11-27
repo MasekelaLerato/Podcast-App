@@ -2,7 +2,7 @@
  import React from 'react';
  import ApiCall from './api-call';
  import Shows from "./shows"
-// import Carosule from "./carousel"
+
 
  const Homepage = () => {
   const { apiData, isLoading, error } = ApiCall();
