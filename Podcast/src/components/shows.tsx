@@ -36,13 +36,14 @@ const PodcastList: React.FC = () => {
   return (
     <div>
    
-      <div>
+      <div className="podcasts">
         {podcasts.map((podcast) => (
-          <div key={podcast.id}>
-            <img src={podcast.image} alt={podcast.title} style={{ maxWidth: '100px' }} />
-            <h2>{podcast.title}</h2>
+          <div key={podcast.id} className="show--item">
+            <img src={podcast.image} className="podcast--image"/>
+            <h3>{podcast.title}</h3>
+           
             {/* <p>{podcast.description}</p> */}
-            <p>Seasons: {podcast.seasons}</p>
+            {/* <p>Seasons: {podcast.seasons}</p> */}
             {/* Add more details as needed */}
           </div>
         ))}
